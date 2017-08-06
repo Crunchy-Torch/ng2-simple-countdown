@@ -1,8 +1,17 @@
 
-<div class="countdown">
-    <div class="timeblock">{{time?.format('HH')}}</div>
+<div *ngIf="time" class="countdown reverse">
+    <div class="timeblock" *ngIf="time.format('HH') as hours">
+        <div class="digitblock"><div class="text">{{firstDigit(hours)}}</div></div>
+        <div class="digitblock"><div class="text">{{lastDigit(hours)}}</div></div>
+    </div>    
     <div class="delimiter"></div>
-    <div class="timeblock">{{time?.format('mm')}}</div>
+    <div class="timeblock" *ngIf="time.format('mm') as minutes">
+        <div class="digitblock"><div class="text">{{firstDigit(minutes)}}</div></div>
+        <div class="digitblock"><div class="text">{{lastDigit(minutes)}}</div></div>
+    </div>
     <div class="delimiter"></div>
-    <div class="timeblock">{{time?.format('ss')}}</div>
+    <div class="timeblock" *ngIf="time.format('ss') as seconds">
+        <div class="digitblock"><div class="text">{{firstDigit(seconds)}}</div></div>
+        <div class="digitblock"><div class="text">{{lastDigit(seconds)}}</div></div>
+    </div>
 </div>

@@ -40,4 +40,12 @@ export class CountdownComponent implements OnInit {
   stop() {
     this.sub.unsubscribe();
   }
+
+  private firstDigit(value: number): number {
+    return Math.floor(value / 10);
+  }
+
+  private lastDigit(value: number): number {
+    return value % 10;
+  }
 }

@@ -1,27 +1,43 @@
+$dark: #333;
+
 .countdown {
     padding: .5rem;
 
-    .timeblock, .delimiter {
+    .timeblock, .digitblock, .delimiter {
         display: inline-block;
     }
 
-    .delimiter::before {
+    .delimiter:before {
         content: ":";
         font-size: 1.5rem;
         margin-bottom: .5rem;
     }
 
-    .timeblock {
+    .digitblock {
 
-        .reverse {
-            background-color: black;
-            color: white;
-            border: none;
-        }
+        .text {
+            padding: .8rem .5rem;
+        }        
 
-        border: 1px solid black;
-        padding: .8rem .5rem;
+        border: 1px solid $dark;
         font-size: 1.5rem;
         border-radius: .3rem;
+    }
+
+    &.reverse {
+
+        .digitblock {
+            color: white;
+            border: none;
+            background-color: $dark;
+
+            .text {                    
+                background: linear-gradient(180deg, 
+                    rgba(0,0,0,0) calc(50% - 1px), 
+                    rgba(115,115,115,1) calc(50%), 
+                    rgba(0,0,0,0) calc(50% + 1px)
+                );            
+            }
+        }        
     }
 }
