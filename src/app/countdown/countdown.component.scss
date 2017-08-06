@@ -1,0 +1,27 @@
+.countdown {
+    padding: .5rem;
+
+    .timeblock, .delimiter {
+        display: inline-block;
+    }
+
+    .delimiter::before {
+        content: ":";
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+
+    .timeblock {
+
+        .reverse {
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        border: 1px solid black;
+        padding: .8rem .5rem;
+        font-size: 1.5rem;
+        border-radius: .3rem;
+    }
+}
